@@ -10,29 +10,25 @@
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     console.log('DOMContentLoaded');
-    window.onload = load;
     window.addEventListener('load', () => {
-      console.log('window.load');
-      // const preLoader = document.querySelector('.preLoader');
-      //   preLoader.classList.add('loadComplete');
+      console.log('Window Loaded');
+      const preLoader = document.querySelector('.preLoader');
+      preLoader.classList.add('loadComplete');
     });
-    function load() {
-      console.log('window.onload');
-      // const preLoader = document.querySelector('.preLoader');
-      // preLoader.classList.add('loadComplete');
-    }
+    window.addEventListener("beforeunload", function () {
+      console.log('Window Unloading');
+    });
   });
 </script>
 </head>
 <body>
 
+<!-- Be sure to throttle the network speed so you don't have to load a big image every time. -->
 <div class="mainWrapper">
   <div class="preLoader">
     <div class="loader"></div>
   </div>
-  <h1>HELLO WORLD</h1>
 </div>
-
 
 </body>
 </html>

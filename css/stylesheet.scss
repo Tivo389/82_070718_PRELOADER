@@ -5,18 +5,13 @@
 @import '_font';
 @import '_debugger';
 
-h1 {
-  color: $colorWhite;
-}
-
 @keyframes loader {
-  0% {transform: rotate(0);}
-  75% {transform: rotate(90deg);}
-  100% {transform: rotate(90deg);}
+  0% {transform: rotateZ(0) rotateY(0);}
+  50% {transform: rotateZ(90deg) rotateY(0);}
+  100% {transform: rotateZ(90deg) rotateY(180deg);}
 }
 .preLoader {
   align-items: center;
-  background-color: $colorMain;
   bottom: 0;
   display: flex;
   flex-direction: column;
@@ -28,9 +23,9 @@ h1 {
   top: 0;
   width: 100vw;
   z-index: 9999;
+  opacity: 1;
   transition-duration: $transitionL;
   &.loadComplete {
-    transform: translateX(100vw);
     opacity: 0;
   }
   .loader {
@@ -38,7 +33,7 @@ h1 {
     height: 80px;
     background-color: $colorSub;
     border-radius: 0.2rem;
-    animation: 1s infinite cubic-bezier(0.5, 0, 0.5, 1.5) loader;
+    animation: 1.8s infinite cubic-bezier(0.5, 0, 0.5, 1.5) loader;
   }
 }
 
@@ -50,7 +45,7 @@ h1 {
   justify-content: center;
   width: 100vw;
   overflow: hidden;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/72/%27Calypso%27_Panorama_of_Spirit%27s_View_from_%27Troy%27_%28Stereo%29.jpg');
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b9/Pizigani_1367_Chart_1MB.jpg');
   background-size: cover;
 }
 
